@@ -9,22 +9,19 @@
   <div class="panel panel-default products">
 
     <table class="table table-bordered">
-      <thead>
+      <thead class="dashboard-table">
         <tr>
-          <th colspan="2">Total Number Of Products</th>
-          <th>Category</th>
-          <th>Price</th>
-          <th>Qty Remaining</th>
-          <th></th>
+          <th colspan="2">Total Products</th>
+          <th><%=@category_count %></th>
+        </tr>
+   
+        <tr>
+        <th colspan="2">Types of Categories</th>
+        <th> <%= @product_count %> </th>
+        
         </tr>
       </thead>
-      <tbody>
-        <%= @product_count %>
-        <%= @product_sum %>
-        <%= @catagory_count %>
-
-
-      </tbody>
+      
     </table>
 
   </div>

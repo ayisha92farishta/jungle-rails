@@ -4,9 +4,8 @@ class Admin::DashboardController < ApplicationController
 
 
   def show
-    @total_products = Product.all
     @product_count = Product.all.count
     @product_sum = Product.sum(:quantity)
-    @catagory_count = Category.all.count
+    @category_count = Category.all.count
     end
 end
