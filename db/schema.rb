@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20220125180402) do
     t.string "first_name"
     t.string "last_name"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
   end
 
   add_foreign_key "line_items", "orders"
