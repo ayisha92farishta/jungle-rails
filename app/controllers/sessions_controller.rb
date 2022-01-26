@@ -21,6 +21,4 @@ class SessionsController < ApplicationController
     redirect_to '/login'
   end
 
-  def destroy
-  end
 end
