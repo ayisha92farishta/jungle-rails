@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :password, confirmation: true, length: {minimum: 6 }
+  validates :email, uniqueness: {case_sensitive: false}
 
   def self.authenticate_with_credentials(email, password)
     if email == email.upcase! 
