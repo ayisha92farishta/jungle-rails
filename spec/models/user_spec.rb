@@ -51,6 +51,19 @@ RSpec.describe User, type: :model do
       @user = User.authenticate_with_credentials('abc@gmail.com', 'abc@123')
       expect(@user).to be_present
     end
+
+    it 'should allow the user to login even when all the letters in email are uppercase' do
+      user1 = User.new(:first_name => 'abc', :last_name => 'efg', :email => 'abc@gmail.com', :password => 'abc@123', :password_confirmation => 'abc@123')
+      user1.save
+      @user = User.authenticate_with_credentials('ABC@gmail.com', 'abc@123')
+      expect(@user).to be_present
+    end
+    it 'should allow the user to login when there is space before or after email' do
+      user1 = User.new(:first_name => 'abc', :last_name => 'efg', :email => 'abc@gmail.com', :password => 'abc@123', :password_confirmation => 'abc@123')
+      user1.save
+      @user = User.authenticate_with_credentials(' abc@gmail.com', 'abc@123')
+      expect(@user).to be_present
+    end
   end
 
   
